@@ -1,0 +1,18 @@
+<ion-card color="tertiary">
+  <ion-card-content>
+    <ion-card-title>Hipertensão: {{ evaluation.hipertensao }}</ion-card-title>
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <h2>Pressão Sistólica: {{ evaluation.pSistolica }} mmHg</h2>
+      </ion-row>
+      <ion-row>
+        <h2>Pressão Diastólica: {{ evaluation.pDiastolica }} mmHg</h2>
+      </ion-row>
+    </ion-grid>
+    <div class="ion-text-end">
+      <h4>Atualizado: {{
+        evaluation.dataHora.toLocaleDateString()
+      }}</h4>
+    </div>
+  </ion-card-content>
+</ion-card>
