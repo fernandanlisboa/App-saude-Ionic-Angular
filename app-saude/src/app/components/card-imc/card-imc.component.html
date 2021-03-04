@@ -1,0 +1,19 @@
+<ion-card color="primary">
+  <ion-card-content>
+    <ion-card-title>IMC: {{ measure.imc.classificacao }}</ion-card-title>
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <h2>Valor: {{ measure.imc.valor }} kg/m²</h2>
+      </ion-row>
+      <ion-row>
+        <h2>Peso: {{ measure.peso }} kg</h2>
+      </ion-row>
+      <ion-row>
+        <h2>Altura: {{ measure.altura }} cm</h2>
+      </ion-row>
+    </ion-grid>
+    <div class="ion-text-end">
+      <h4>Atualizado: {{ measure.dataHora.toLocaleDateString() }}</h4>
+    </div>
+  </ion-card-content>
+</ion-card>
