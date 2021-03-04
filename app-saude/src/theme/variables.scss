@@ -27,6 +27,14 @@
   --ion-color-tertiary-shade: #921c46;
   --ion-color-tertiary-tint: #bc768f;
 
+  /** quaternary  **/
+  --ion-color-quaternary: #bc768f;
+  --ion-color-quaternary-rgb: 188, 118, 143;
+  --ion-color-quaternary-contrast: #ffffff;
+  --ion-color-quaternary-contrast-rgb: 255, 255, 255;
+  --ion-color-quaternary-shade: #b13963;
+  --ion-color-quaternary-tint: #ca9bac;
+
   /** success **/
   --ion-color-success: #2dd36f;
   --ion-color-success-rgb: 45, 211, 111;
@@ -74,6 +82,15 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+}
+
+.ion-color-quaternary {
+  --ion-color-base: var(--ion-color-quaternary);
+  --ion-color-base-rgb: var(--ion-color-quaternary-rgb);
+  --ion-color-contrast: var(--ion-color-quaternary-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-quaternary-contrast-rgb);
+  --ion-color-shade: var(--ion-color-quaternary-shade);
+  --ion-color-tint: var(--ion-color-quaternary-tint);
 }
 
 @media (prefers-color-scheme: light) {
