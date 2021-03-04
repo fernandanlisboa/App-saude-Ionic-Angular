@@ -1,6 +1,6 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Tab1Page } from 'src/app/pages/tab1/tab1.page';
+import { Collab } from 'src/app/models/collab.model';
 
 @Component({
   selector: 'app-modal',
@@ -11,7 +11,7 @@ export class ModalComponent{
 
   constructor(public modalController: ModalController) { }
 
-
+  @Input() colab: Collab;
   dismiss() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data

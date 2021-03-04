@@ -31,6 +31,7 @@ export class Tab1Page {
   async presentModal() {
     const modal = await this.modalController.create({
       component: ModalComponent,
+      componentProps: {'colab': this.colab}
       // cssClass: 'my-custom-class'
     });
     return await modal.present();
