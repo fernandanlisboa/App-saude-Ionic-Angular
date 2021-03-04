@@ -12,7 +12,7 @@ export class CardHypertensionComponent implements OnInit {
   @Input() evaluation: Evaluation = {
     id: '1',
     pulso: 90,
-    hipertensao:"normal",
+    hipertensao:"normal limítrofe",
     pSistolica: 120,
     pDiastolica: 80,
     dataHora: new Date(),

@@ -1,16 +1,39 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Histórico
-    </ion-title>
+    <ion-title> Histórico </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Histórico</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-content>
+  <ion-item>
+    <ion-label color="medium">Selecione um data para pesquisar</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="medium">DD/MM/YYYY</ion-label>
+    <ion-datetime
+      displayFormat="DD/MM/YYYY"
+      [max]="now.toISOString()"
+      [value]="now.toLocaleDateString()"
+    ></ion-datetime>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h4>Pressão Arterial</h4>
+        <app-card-hypertension></app-card-hypertension>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>Pulso</h4>
+        <app-card-pulse></app-card-pulse>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>Medidas</h4>
+        <app-card-imc [measure]="colab.medida"></app-card-imc>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
