@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
+import { Collab } from 'src/app/models/collab.model';
 
 @Component({
   selector: 'app-tab1',
@@ -10,6 +11,22 @@ import { ModalComponent } from 'src/app/components/modal/modal.component';
 export class Tab1Page {
 
   constructor(public modalController: ModalController) {}
+
+  colab: Collab = {
+    id: '1',
+    email: 'colab@email.com',
+    dataNascimento: new Date('05/10/2000'),
+    medida: {
+      peso: 70,
+      altura: 180,
+      dataHora: new Date(),
+      imc:{
+        valor: 21.6,
+        classificacao: "normal"
+      }
+    },
+    historicoMedidas: []
+  }
 
   async presentModal() {
     const modal = await this.modalController.create({

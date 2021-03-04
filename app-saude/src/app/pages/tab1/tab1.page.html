@@ -1,10 +1,29 @@
 <ion-header>
   <ion-toolbar>
     <ion-title> Ficha Médica </ion-title>
-    <ion-button fill="clear" slot="end" (click)="presentModal()">Atualizar</ion-button>
+    <ion-button fill="clear" slot="end" (click)="presentModal()"
+      >Atualizar</ion-button
+    >
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label color="medium">Peso (kg)</ion-label>
+            <ion-input readonly [value]="colab.medida.peso"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="medium">Altura (cm)</ion-label>
+            <ion-input readonly [value]="colab.medida.altura"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-card-imc [measure]="colab.medida"></app-card-imc>
+  <app-card-hypertension></app-card-hypertension>
 </ion-content>
