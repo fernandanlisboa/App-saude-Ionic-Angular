@@ -51,13 +51,21 @@ export class ApiService {
   }
 
   getAvaliacaoCollabData(data): Observable<any> {
-    //var filter = { dataHora: data };
     return this.http.get<any>(
       `${environment.api}/colaboradors/${localStorage.getItem(
         'id'
       )}/avaliacao/${data}`,
       httpOptions
     );
+  }
+
+  getCollab(): Observable<any>{
+    return this.http.get<any>(
+      `${environment.api}/colaboradors/${localStorage.getItem(
+        'id'
+      )}`,
+      httpOptions
+    )
   }
 
 }
