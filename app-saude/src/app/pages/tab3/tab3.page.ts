@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Calendar } from '@ionic-native/calendar';
 import { Collab } from 'src/app/models/collab.model';
 
 @Component({

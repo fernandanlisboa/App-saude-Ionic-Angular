@@ -11,32 +11,56 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-list>
-        <ion-item>
-          <ion-label color="medium">Email</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label color="medium">Senha</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label color="medium">Confirmar Senha</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating" color="medium"
-            >Data de nascimento</ion-label
-          >
-          <ion-datetime
-            displayFormat="DD/MM/YYYY"
-            [max]="now.toISOString()"
 
-          ></ion-datetime>
-        </ion-item>
-      </ion-list>
-    </ion-row>
-    <ion-button color="secondary" expand="block">Enviar</ion-button>
+    <form
+      [formGroup]="formRegister"
+      (ngSubmit)="onFormRegisterSubmit()"
+    >
+      <ion-row>
+        <ion-list>
+          <ion-item>
+            <ion-label color="medium">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="medium">Senha</ion-label>
+            <ion-input
+              type="password"
+              formControlName="password"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="medium">Confirmar Senha</ion-label>
+            <ion-input
+              type="password"
+              formControlName="confirmPassword"
+            ></ion-input>
+          </ion-item>
+          <ion-row
+            style="padding-left: 5%"
+            *ngIf="!confirmPassword() && this.formRegister.controls.confirmPassword.value!==('') "
+          >
+            <ion-label color="danger">Senha incorreta!</ion-label>
+          </ion-row>
+          <ion-item>
+            <ion-label position="floating" color="medium"
+              >Data de nascimento</ion-label
+            >
+            <ion-datetime
+              formControlName="dataNascimento"
+              displayFormat="DD/MM/YYYY"
+              [max]="now.toISOString()"
+            ></ion-datetime>
+          </ion-item>
+        </ion-list>
+      </ion-row>
+      <ion-button
+        color="secondary"
+        expand="block"
+        type="submit"
+        [disabled]="!formRegister.valid || !confirmPassword()"
+        >Enviar</ion-button
+      >
+    </form>
   </ion-grid>
 </ion-content>

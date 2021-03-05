@@ -17,7 +17,16 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(colab: any): Observable<any>{
-    return this.http.post<any>(`${environment.api}/colaboradors/login`, colab)
+  login(collab: any): Observable<any>{
+    return this.http.post<any>(`${environment.api}/colaboradors/login`, collab)
   }
+
+  register(collab: any): Observable<any>{
+    return this.http.post<any>(`${environment.api}/colaboradors`, collab)
+  }
+
+  logout(): Observable<any>{
+    return this.http.post<any>(`${environment.api}/colaboradors/logout`, httpOptions)
+  }
+
 }

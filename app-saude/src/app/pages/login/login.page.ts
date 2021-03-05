@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
   formLogin: FormGroup;
-  @Input() collab: any = { email: '', password: '' };
+  collab: any = { email: '', password: '' };
 
   constructor(private service: AuthService, private formBuilder: FormBuilder, private router: Router) {
     this.formLogin = this.formBuilder.group({

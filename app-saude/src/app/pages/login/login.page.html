@@ -20,7 +20,7 @@
         <ion-col>
           <ion-list>
             <ion-item>
-              <ion-label color="medium" >Email</ion-label>
+              <ion-label color="medium">Email</ion-label>
               <ion-input type="email" formControlName="email"></ion-input>
             </ion-item>
             <ion-item>
@@ -30,14 +30,20 @@
           </ion-list>
         </ion-col>
       </ion-row>
-      <ion-button color="secondary" expand="block" type="submit" [disabled]="!formLogin.valid">Login</ion-button>
-
+      <ion-button
+        color="secondary"
+        expand="block"
+        type="submit"
+        [disabled]="!formLogin.valid"
+        >Login</ion-button
+      >
     </form>
 
-
-
+    <ion-button color="primary" expand="block" fill="clear" href="/register"
+      >ou Cadastre-se</ion-button
+    >
     <ion-row class="ion-justify-content-center">
-      <ion-img src="assets/images/image-login.png" style="width: 95%;"></ion-img>
+      <ion-img src="assets/images/image-login.png" style="width: 95%"></ion-img>
     </ion-row>
   </ion-grid>
 </ion-content>
