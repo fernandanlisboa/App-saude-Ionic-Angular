@@ -12,20 +12,30 @@
           <h6>Seja bem vindo de volta!</h6>
           <h6>Continue a monitorar sua saúde!</h6>
         </div>
-
-        <ion-list>
-          <ion-item>
-            <ion-label color="medium">Email</ion-label>
-            <ion-input type="email"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label color="medium">Senha</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
-        </ion-list>
       </ion-col>
     </ion-row>
-    <ion-button color="secondary" expand="block">Login</ion-button>
+
+    <form [formGroup]="formLogin" (ngSubmit)="onFormLoginSubmit()">
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-label color="medium" >Email</ion-label>
+              <ion-input type="email" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="medium">Senha</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-button color="secondary" expand="block" type="submit" [disabled]="!formLogin.valid">Login</ion-button>
+
+    </form>
+
+
+
     <ion-row class="ion-justify-content-center">
       <ion-img src="assets/images/image-login.png" style="width: 95%;"></ion-img>
     </ion-row>
