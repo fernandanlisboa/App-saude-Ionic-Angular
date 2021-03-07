@@ -6,8 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { ComponentsModule } from 'src/app/components/components.module';
-
-
+import { ApiService } from 'src/app/service/api.service';
 
 
 @NgModule({
@@ -20,6 +19,6 @@ import { ComponentsModule } from 'src/app/components/components.module';
     ComponentsModule
   ],
   declarations: [Tab3Page],
-  providers:[]
+  providers:[ApiService]
 })
 export class Tab3PageModule {}

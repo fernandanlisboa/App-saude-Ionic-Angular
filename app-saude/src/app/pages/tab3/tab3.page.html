@@ -13,27 +13,45 @@
     <ion-datetime
       displayFormat="DD/MM/YYYY"
       [max]="now.toISOString()"
-      [value]="now.toLocaleDateString()"
+      [value]="now.toISOString()"
+      id="selectedDate"
+      (ionChange)="onDateChange()"
     ></ion-datetime>
   </ion-item>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <h4>Pressão Arterial</h4>
-        <app-card-hypertension></app-card-hypertension>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <h4>Pulso</h4>
-        <app-card-pulse></app-card-pulse>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <h4>Medidas</h4>
-        <app-card-imc [measure]="colab.medida"></app-card-imc>
-      </ion-col>
-    </ion-row>
+
+  <ion-grid *ngIf="evaluations && measures">
+    <h4 *ngIf="evaluations.length > 0">Pressão Arterial</h4>
+    <div *ngFor="let evaluation of evaluations">
+      <app-card-hypertension
+        *ngIf="evaluation"
+        [evaluation]="evaluation"
+      ></app-card-hypertension>
+    </div>
+
+    <h4 *ngIf="evaluations.length > 0">Pulso</h4>
+    <div *ngFor="let evaluation of evaluations">
+      <app-card-pulse
+        *ngIf="evaluation"
+        [evaluation]="evaluation"
+      ></app-card-pulse>
+    </div>
+
+    <h4 *ngIf="measures.length > 0">Medidas</h4>
+    <div *ngFor="let measure of measures">
+      <app-card-imc *ngIf="measure" [measure]="measure"></app-card-imc>
+    </div>
+
+    <div *ngIf="measures.length === 0 && evaluations.length === 0">
+      <ion-card>
+        <ion-card-content>
+          <ion-label
+            >Você não realizou atualizou suas medidas, nem monitorou sua saúde
+            neste dia!</ion-label
+          >
+        </ion-card-content>
+      </ion-card>
+    </div>
   </ion-grid>
+
+
 </ion-content>

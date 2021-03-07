@@ -14,7 +14,7 @@ export class CardHypertensionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.evaluation.dataUltima = (new Date(this.evaluation.dataUltima))
+    this.evaluation.dataHora = (new Date(this.evaluation.dataHora))
   }
 
 }
