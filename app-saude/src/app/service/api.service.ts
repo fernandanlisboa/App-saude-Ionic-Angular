@@ -34,7 +34,7 @@ export class ApiService {
   }
 
   postAvaliacaoCollab(avaliacao): Observable<any> {
-    return this.http.put<any>(
+    return this.http.post<any>(
       `${environment.api}/colaboradors/${localStorage.getItem(
         'id'
       )}/avaliacoes`,
