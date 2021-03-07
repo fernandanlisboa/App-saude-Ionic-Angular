@@ -1,27 +1,70 @@
 <ion-header>
   <ion-toolbar>
     <ion-title> Ficha Médica </ion-title>
-    <ion-button fill="clear" slot="end" (click)="presentModal()">Atualizar</ion-button>
+    <ion-button fill="clear" slot="end" (click)="presentModal()"
+      >Atualizar</ion-button
+    >
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-list>
-          <ion-item>
-            <ion-label color="medium">Peso (kg)</ion-label>
-            <ion-input readonly [value]="colab.medida.peso"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label color="medium">Altura (cm)</ion-label>
-            <ion-input readonly [value]="colab.medida.altura"></ion-input>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <app-card-imc [measure]="colab.medida"></app-card-imc>
-  <app-card-hypertension></app-card-hypertension>
+  <div *ngIf="colab">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-list *ngIf="colab.medida; else noMeasure">
+            <ion-item>
+              <ion-label color="medium">Peso (kg)</ion-label>
+              <ion-input readonly [value]="colab.medida.peso"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="medium">Altura (cm)</ion-label>
+              <ion-input readonly [value]="colab.medida.altura"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <app-card-imc *ngIf="colab.medida" [measure]="colab.medida"></app-card-imc>
+    <app-card-hypertension
+      *ngIf="evaluation; else noEvaluation"
+      [evaluation]="evaluation"
+    ></app-card-hypertension>
+
+    <ng-template #noMeasure>
+      <ion-card>
+        <ion-card-content>
+          <div class="ion-text-center">
+            <h3>Seja bem vindo!</h3>
+            <h3>Registre suas medidas atuais!</h3>
+          </div>
+
+          <ion-button
+            (click)="presentModal()"
+            color="primary"
+            fill="clear"
+            expand="full"
+            >Adicionar Medidas</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+    <ng-template #noEvaluation>
+      <ion-card>
+        <ion-card-content>
+          <div class="ion-text-center">
+            <h3>Você ainda não possui avaliações cadastradas!</h3>
+            <h3>Comece a monitorar sua saúde agora!</h3>
+          </div>
+          <ion-button
+            href="tabs/monitorar"
+            color="primary"
+            fill="clear"
+            expand="full"
+            >Monitorar</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+  </div>
 </ion-content>

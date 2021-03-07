@@ -6,6 +6,7 @@ import { Tab1Page } from './tab1.page';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { ApiService } from 'src/app/service/api.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
     Tab1PageRoutingModule,
     ComponentsModule
   ],
-  declarations: [Tab1Page]
+  declarations: [Tab1Page],
+  providers:[ApiService]
 })
 export class Tab1PageModule {}

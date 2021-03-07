@@ -9,18 +9,12 @@ import {Evaluation} from '../../models/evaluation.model'
 })
 export class CardPulseComponent implements OnInit {
 
-  @Input() evaluation: Evaluation = {
-    id: '1',
-    pulso: 90,
-    hipertensao:"normal",
-    pSistolica: 120,
-    pDiastolica: 80,
-    dataHora: new Date(),
-    ColaboradorId: '1'
-  };
+  @Input() evaluation: Evaluation;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.evaluation.dataUltima = (new Date(this.evaluation.dataUltima))
+  }
 
 }

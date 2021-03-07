@@ -4,6 +4,6 @@ export interface Evaluation{
   pSistolica: number,
   pDiastolica: number,
   pulso: number,
-  dataHora: Date,
+  dataUltima: Date,
   ColaboradorId: string
 }
