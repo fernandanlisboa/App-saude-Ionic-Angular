@@ -1,9 +1,9 @@
 export interface Measure{
   peso: number,
   altura: number,
-  dataHora: Date,
+  dataHora: string,
   imc:{
-    valor: number,
+    valor: string,
     classificacao: string
   }
 }

@@ -28,6 +28,14 @@ export class Tab1Page {
     this.service.getCollab().subscribe(
       (res) => {
         this.colab = res;
+        if (this.colab.medida === null) {
+          this.colab.medida = {
+            peso: null,
+            altura: null,
+            dataHora: null,
+            imc: { classificacao: null, valor: null },
+          };
+        }
       },
       (err) => console.log(err)
     );

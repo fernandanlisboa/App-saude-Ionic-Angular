@@ -12,7 +12,7 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-list *ngIf="colab.medida; else noMeasure">
+          <ion-list *ngIf="colab.medida.peso !== null; else noMeasure">
             <ion-item>
               <ion-label color="medium">Peso (kg)</ion-label>
               <ion-input readonly [value]="colab.medida.peso"></ion-input>
@@ -25,7 +25,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <app-card-imc *ngIf="colab.medida" [measure]="colab.medida"></app-card-imc>
+    <app-card-imc *ngIf="colab.medida.peso" [measure]="colab.medida"></app-card-imc>
     <app-card-hypertension
       *ngIf="evaluation; else noEvaluation"
       [evaluation]="evaluation"

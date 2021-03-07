@@ -9,9 +9,12 @@ import { Measure } from 'src/app/models/measure.model';
 export class CardImcComponent implements OnInit {
 
   @Input() measure: Measure;
+  dataHora: Date;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dataHora = (new Date(this.measure.dataHora))
+  }
 
 }

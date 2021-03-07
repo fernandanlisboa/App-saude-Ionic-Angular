@@ -9,23 +9,31 @@
   </ion-header>
 
   <ion-content>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-list>
-            <ion-item>
-              <ion-label color="medium">Peso (kg)</ion-label>
-              <ion-input [value]="colab.medida.peso"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label color="medium">Altura (cm)</ion-label>
-              <ion-input [value]="colab.medida.altura"></ion-input>
-            </ion-item>
-          </ion-list>
-        </ion-col>
-      </ion-row>
+    <form [formGroup]="formUpdate" (ngSubmit)="onFormUpdateSubmit()">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-label color="medium">Peso (kg)</ion-label>
+                <ion-input
+                  formControlName="peso"
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="medium">Altura (cm)</ion-label>
+                <ion-input
+                  formControlName="altura"
+                ></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
 
-      <ion-button color="secondary" expand="block">Atualizar</ion-button>
-    </ion-grid>
+        <ion-button color="secondary" expand="block" type="submit"
+          >Atualizar</ion-button
+        >
+      </ion-grid>
+    </form>
   </ion-content>
 </div>

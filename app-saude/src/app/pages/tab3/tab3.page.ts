@@ -17,9 +17,9 @@ export class Tab3Page {
     medida: {
       peso: 70,
       altura: 180,
-      dataHora: new Date(),
+      dataHora: (new Date()).toISOString(),
       imc:{
-        valor: 21.6,
+        valor: "21.6",
         classificacao: "normal"
       }
     },
