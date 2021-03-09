@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ModalComponent } from './modal.component';
 
-describe('ModalComponent', () => {
+xdescribe('ModalComponent', () => {
   let component: ModalComponent;
   let fixture: ComponentFixture<ModalComponent>;
 
