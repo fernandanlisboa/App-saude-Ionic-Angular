@@ -38,7 +38,10 @@ export class RegisterPage implements OnInit {
         Validators.required,
         Validators.minLength(3),
       ]),
-      confirmPassword: new FormControl(''),
+      confirmPassword: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
       dataNascimento: new FormControl('', [Validators.required]),
     })),
       { Validators: this.confirmPassword };
