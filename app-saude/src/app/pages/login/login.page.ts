@@ -27,6 +27,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
   onFormLoginSubmit() {
+    console.log('ui')
     this.collab.email = this.formLogin.controls.email.value;
     this.collab.password = this.formLogin.controls.password.value;
 
