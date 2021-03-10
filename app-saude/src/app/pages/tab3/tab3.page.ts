@@ -24,8 +24,7 @@ export class Tab3Page {
   }
 
   onDateChange(){
-    var date = (<HTMLInputElement>document.getElementById("selectedDate")).value
-    console.log(date.slice(0,10))
+    var date = (<HTMLInputElement>document.getElementById("selectedDate")).value;
 
     this.getEvaluationDate(date.slice(0,10))
     this.getMeasureDate(date.slice(0,10))
