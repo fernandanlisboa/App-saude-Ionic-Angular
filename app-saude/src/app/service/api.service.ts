@@ -18,7 +18,7 @@ export class ApiService {
 
   getMedidasData(data): Observable<any> {
     return this.http.get<any>(
-      `${environment.api}/colaboradors/${localStorage.getItem(
+      `${environment.api_colab}/colaboradors/${localStorage.getItem(
         'id'
       )}/medidas/${data}`,
       httpOptions
@@ -27,7 +27,7 @@ export class ApiService {
 
   updateMedida(medida): Observable<any> {
     return this.http.put<any>(
-      `${environment.api}/colaboradors/${localStorage.getItem('id')}/medida`,
+      `${environment.api_colab}/colaboradors/${localStorage.getItem('id')}/medida`,
       medida,
       httpOptions
     );
@@ -35,7 +35,7 @@ export class ApiService {
 
   postAvaliacaoCollab(avaliacao): Observable<any> {
     return this.http.post<any>(
-      `${environment.api}/colaboradors/${localStorage.getItem(
+      `${environment.api_colab}/colaboradors/${localStorage.getItem(
         'id'
       )}/avaliacoes`,
       avaliacao,
@@ -45,14 +45,14 @@ export class ApiService {
 
   getLastAvaliacaoCollab(): Observable<any> {
     return this.http.get<any>(
-      `${environment.api}/colaboradors/${localStorage.getItem('id')}/avaliacao/ultima`,
+      `${environment.api_colab}/colaboradors/${localStorage.getItem('id')}/avaliacao/ultima`,
       httpOptions
     );
   }
 
   getAvaliacaoCollabData(data): Observable<any> {
     return this.http.get<any>(
-      `${environment.api}/colaboradors/${localStorage.getItem(
+      `${environment.api_colab}/colaboradors/${localStorage.getItem(
         'id'
       )}/avaliacao/${data}`,
       httpOptions
@@ -61,7 +61,7 @@ export class ApiService {
 
   getCollab(): Observable<any>{
     return this.http.get<any>(
-      `${environment.api}/colaboradors/${localStorage.getItem(
+      `${environment.api_colab}/colaboradors/${localStorage.getItem(
         'id'
       )}`,
       httpOptions
