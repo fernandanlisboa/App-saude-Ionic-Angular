@@ -26,6 +26,7 @@ export class ApiService {
   }
 
   updateMedida(medida): Observable<any> {
+    console.log('endpoint update')
     return this.http.put<any>(
       `${environment.api_colab}/colaboradors/${localStorage.getItem('id')}/medida`,
       medida,
@@ -34,10 +35,9 @@ export class ApiService {
   }
 
   postAvaliacaoCollab(avaliacao): Observable<any> {
+    avaliacao.colaborador = localStorage.getItem('id');
     return this.http.post<any>(
-      `${environment.api_colab}/colaboradors/${localStorage.getItem(
-        'id'
-      )}/avaliacoes`,
+      `${environment.api_avaliativo}/avaliacaos`,
       avaliacao,
       httpOptions
     );
